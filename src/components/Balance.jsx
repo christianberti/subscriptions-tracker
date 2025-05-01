@@ -16,8 +16,8 @@ const Balance = ( {amount, subsList, spent, setSpent} ) => {
     <div className='balance'>
 
       <p>Presupuesto: ${amount}</p>
-      <p>Gastado: ${amount - spent}</p>
-      <p>Disponible: ${spent}</p>
+      <p>Gastado: ${spent}</p>
+      <p>Disponible: ${amount - spent}</p>
 
     </div>
   )
