@@ -2,7 +2,7 @@ import './CardItem.css'
 
 const CardItem = ({ item, eliminarItem, editItem }) => {
 
-  const urlImage = `./src/images/${item.type}.png`
+  const urlImage = `./images/${item.type}.png`
 
   const handleDelete = (e, id) => {
     e.preventDefault()
