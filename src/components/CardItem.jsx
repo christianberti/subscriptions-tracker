@@ -2,8 +2,6 @@ import './CardItem.css'
 
 const CardItem = ({ item, eliminarItem, editItem }) => {
 
-  const urlImage = `./images/${item.type}.png`
-
   const handleDelete = (e, id) => {
     e.preventDefault()
     const answer = window.confirm(`¿Desea borrar ${item.type} de sus suscripciones?`)
@@ -19,7 +17,7 @@ const CardItem = ({ item, eliminarItem, editItem }) => {
 
   return (
     <div key={item.id} className='single-item'>
-      <img src={urlImage} alt={item.type} />
+      <img src={`./images/${item.type}.png`} alt={item.type} />
       <span>
         ${item.price}
       </span>
