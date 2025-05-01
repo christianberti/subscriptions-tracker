@@ -1,0 +1,25 @@
+.main-control-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-control {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  margin-bottom: 6%;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .main-control {
+    flex-direction: column; /* Acomoda los elementos en una sola columna */
+    gap: 30px;
+    margin-bottom: 6%;
+    width: 80%;
+  }
+
+  .main-control p {
+    margin: 4px;
+  }
+}

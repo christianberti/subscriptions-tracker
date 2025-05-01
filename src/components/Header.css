@@ -1,0 +1,16 @@
+.header{
+  padding: 2% 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.header h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 14px;
+  }
+}
