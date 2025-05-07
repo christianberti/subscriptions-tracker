@@ -11,7 +11,6 @@ const MainControl = ({ amount }) => {
   const [type, setType] = useState('')
   const [price, setPrice] = useState('')
   const [edit, setEdit] = useState('')
-  
   const [spent, setSpent] = useState(0)
 
   const eliminarItem = (id) => {

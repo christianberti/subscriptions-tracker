@@ -17,28 +17,37 @@ const MainForm = ({ setPrice, setType, price, type, setSubsList, subsList, edit,
         return; // Detenemos la ejecución si hay errores básicos
     }
 
-    if (amount - spent < Number(price)) {
+    let availableAmount = amount - spent;
+
+    if (edit !== "") {
+        const previousSub = subsList.find(item => item.id === edit);
+        
+        if (previousSub) {
+            availableAmount += previousSub.price;
+        }
+    }
+
+    if (availableAmount < Number(price)) {
         setErrorMoney(true);
         setTimeout(() => {
             setErrorMoney(false);
         }, 2000);
-        return; // Detenemos la ejecución si no hay suficiente presupuesto
+        return;
     }
 
     if (edit !== "") {
         setEdit("");
         const newSubs = subsList.map(item => {
             if (item.id === edit) {
-                item.type = type;
-                item.price = price;
+                return { ...item, type, price };
             }
             return item;
         });
         setSubsList(newSubs);
     } else {
         const data = {
-            type: type,
-            price: price,
+            type,
+            price,
             id: Date.now()
         };
         setSubsList([...subsList, data]);
@@ -46,7 +55,7 @@ const MainForm = ({ setPrice, setType, price, type, setSubsList, subsList, edit,
 
     setType("");
     setPrice("");
-};  
+};
 
 return (
   <div className='add-subscription'>
